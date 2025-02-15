@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS BookstoreDB;
+
 -- Use the BookstoreDB database
 USE BookstoreDB;
 

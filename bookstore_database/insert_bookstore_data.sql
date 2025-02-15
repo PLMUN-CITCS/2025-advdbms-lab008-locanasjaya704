@@ -12,7 +12,7 @@ INSERT INTO Authors (Name) VALUES
 ('J.R.R. Tolkien'),
 ('Jane Austen');
 
--- Insert into BookAuthors 
+-- Insert into BookAuthors (Use the generated AuthorIDs)
 INSERT INTO BookAuthors (ISBN, AuthorID) VALUES
 ('9781234567890', 1),
 ('9780321765723', 2),
@@ -24,13 +24,13 @@ INSERT INTO Customers (Name, Email) VALUES
 ('Jane Smith', 'jane.smith@example.com'),
 ('David Lee', 'david.lee@example.com');
 
--- Insert into Orders 
+-- Insert into Orders (Use the generated CustomerIDs)
 INSERT INTO Orders (CustomerID, OrderDate) VALUES
 (1, '2024-07-26'),
 (2, '2024-07-27'),
 (3, '2024-07-28');
 
--- Insert into OrderDetails 
+-- Insert into OrderDetails (Use the generated OrderIDs)
 INSERT INTO OrderDetails (OrderID, ISBN, Quantity) VALUES
 (1, '9781234567890', 1),
 (1, '9780321765723', 2),
