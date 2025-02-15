@@ -1,42 +1,37 @@
 USE BookstoreDB;
 
--- Insert into Books
+
 INSERT INTO Books (ISBN, Title, Price) VALUES
 ('9781234567890', 'The Hitchhiker''s Guide to the Galaxy', 7.99),
 ('9780321765723', 'The Lord of the Rings', 12.99),
 ('9780743273565', 'Pride and Prejudice', 9.99);
 
--- Insert into Authors
-INSERT INTO Authors (Name) VALUES  -- AuthorID auto-increments
+
+INSERT INTO Authors (Name) VALUES  
 ('Douglas Adams'),
 ('J.R.R. Tolkien'),
 ('Jane Austen');
 
--- Insert into BookAuthors (Use the generated AuthorIDs)
+
 INSERT INTO BookAuthors (ISBN, AuthorID) VALUES
 ('9781234567890', 1),
 ('9780321765723', 2),
 ('9780743273565', 3);
 
--- Insert into Customers
-INSERT INTO Customers (Name, Email) VALUES  -- CustomerID auto-increments
+INSERT INTO Customers (Name, Email) VALUES  
 ('John Doe', 'john.doe@example.com'),
 ('Jane Smith', 'jane.smith@example.com'),
 ('David Lee', 'david.lee@example.com');
 
--- Insert into Orders (Use the generated CustomerIDs)
+
 INSERT INTO Orders (CustomerID, OrderDate) VALUES
 (1, '2024-07-26'),
 (2, '2024-07-27'),
 (3, '2024-07-28');
 
--- Insert into OrderDetails (Use the generated OrderIDs)
+
 INSERT INTO OrderDetails (OrderID, ISBN, Quantity) VALUES
 (1, '9781234567890', 1),
 (1, '9780321765723', 2),
 (2, '9780743273565', 1);
 
---  Always insert into parent tables (e.g., Books, Authors, Customers) FIRST.
---  Then insert into child tables (e.g., BookAuthors, Orders, OrderDetails).
---  Make sure the foreign key values in the child tables match the primary key values
---  in the parent tables.
